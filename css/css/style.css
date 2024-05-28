@@ -48,7 +48,11 @@ a {
   position: relative;
   width: 100%;
   z-index: 1; }
-  @media (max-width: 991.98px) {
+  @media (max-width: 576px) {
+    .custom-class {
+      font-size: 14px;
+      padding: 10px;
+  }
     .unslate_co--site-inner {
       margin-bottom: auto !important; } }
 
