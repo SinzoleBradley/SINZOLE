@@ -1347,7 +1347,6 @@ figure.dotted-bg {
   position: absolute;
   -o-object-fit: cover;
   object-fit: cover;
-  /* support for plugin https://github.com/bfred-it/object-fit-images */
   font-family: 'object-fit: cover;';
   top: 0;
   left: 0;
