@@ -143,7 +143,6 @@ var siteMenuClone = function() {
       });
 
       counter++;
-
     });
 
   }, 1000);
@@ -182,17 +181,6 @@ var siteMenuClone = function() {
   });
 
 }; 
-
-
-
-
-// var siteIstotope = function() {
-
-
-	  
-	
-// }
-
 var owlCarouselPlugin = function() {
 
 	$('.testimonial-slider').owlCarousel({
