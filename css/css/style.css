@@ -4,7 +4,9 @@ body {
   font-size: 16px;
   line-height: 30px;
   font-weight: 300;
-  position: relative; }
+  position: relative; 
+  overflow-x: hidden;
+}
   body:before {
     content: "";
     position: absolute;
