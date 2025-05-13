@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="css/vendor/aos.css">
     <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="css/vendor/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" integrity="sha384-1u+o5ffIOOcE5qltK+9ix5yAdt6Ly05WTwi+czm9+eh5c+efk99jW5z5stt5W5z5" crossorigin="anonymous">
     <link rel="icon" href="images/favicon.ico.png">
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script>
@@ -122,7 +123,7 @@
       </div>
       <!-- END .cover-v1 -->
 
-      <div class="unslate_co--section">
+      <div class="unslate_co--section" data-aos="fade-up">
         <div class="container">
           <div class="owl-carousel logo-slider">
             <div class="logo-v1 gsap-reveal">
@@ -139,7 +140,7 @@
       </div>
 
 
-      <div class="unslate_co--section" id="about-section">
+      <div class="unslate_co--section" id="about-section" data-aos="fade-up">
         <div class="container">
           
           <div class="section-heading-wrap text-center mb-5">
@@ -170,7 +171,7 @@
         </div>
       </div>
 
-      <div class="unslate_co--section" id="services-section">
+      <div class="unslate_co--section" id="services-section" data-aos="fade-up">
         <div class="container">
           <div class="section-heading-wrap text-center mb-5">
             <h2 class="heading-h2 text-center divider"><span class="gsap-reveal">My Services</span></h2>
@@ -248,7 +249,7 @@
         </div>
       </div>
 
-      <div class="unslate_co--section" id="skills-section">
+      <div class="unslate_co--section" id="skills-section" data-aos="fade-up">
         <div class="container">
           <div class="section-heading-wrap text-center mb-5">
             <h2 class="heading-h2 text-center divider"><span class="gsap-reveal">My Skills</span></h2>
@@ -289,7 +290,7 @@
         </div>
       </div>
 
-      <div class="unslate_co--section" id="portfolio-section">
+      <div class="unslate_co--section" id="portfolio-section" data-aos="fade-up">
         <div class="container">
           <div class="relative"><div class="loader-portfolio-wrap"><div class="loader-portfolio"></div></div> </div>
           <div id="portfolio-single-holder"></div>
@@ -340,11 +341,11 @@
         </div>
 
         <div class="item web branding col-sm-6 col-md-6 col-lg-4 isotope-mb-2">
-          <a href="https://youtu.be/it1rTvBcfRg?si=ySY_iVEwufdXY" class="portfolio-item isotope-item gsap-reveal-img" data-fancybox="gallery" data-caption="Showreel 2019">
+          <a href="#" class="portfolio-item isotope-item gsap-reveal-img" data-fancybox="gallery" data-caption="Showreel 2019">
               <div class="overlay">
                 <span class="wrap-icon icon-play_circle_filled"></span>
                 <div class="portfolio-item-content">
-                  <h3>Showreel 2024</h3>
+                  <h3>Showreel</h3>
                   <p>web, branding</p>
                 </div>
               </div>
@@ -370,7 +371,7 @@
 </div>
       <!-- END .counter -->
 
-      <div class="unslate_co--section" id="testimonial-section">
+      <div class="unslate_co--section" id="testimonial-section" data-aos="fade-up">
         <div class="container">
           <div class="section-heading-wrap text-center mb-5">
             <h2 class="heading-h2 text-center divider"><span class="gsap-reveal">My Happy Clients</span></h2>
@@ -448,7 +449,7 @@
       </div>
       <!-- END testimonial -->
 
-      <div class="unslate_co--section" id="journal-section">
+      <div class="unslate_co--section" id="journal-section" data-aos="fade-up">
         <div class="container">
           <div class="section-heading-wrap text-center mb-5">
             <h2 class="heading-h2 text-center divider"><span class="gsap-reveal">My Blogs</span></h2>
@@ -530,7 +531,7 @@
       <!-- END blog posts -->
 
 
-      <div class="unslate_co--section" id="contact-section">
+      <div class="unslate_co--section" id="contact-section" data-aos="fade-up">
         <div class="container">
           <div class="section-heading-wrap text-center mb-5">
             <h2 class="heading-h2 text-center divider"><span class="gsap-reveal">Get In Touch</span></h2>
@@ -669,6 +670,10 @@ function sendAutoReply(email, name) {
             console.error('Error sending auto-reply:', error);
         });
 }
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" integrity="sha384-1u+o5ffIOOcE5qltK+9ix5yAdt6Ly05WTwi+czm9+eh5c+efk99jW5z5stt5W5z5" crossorigin="anonymous"></script>
+    <script>
+      AOS.init();
     </script>
   </body>
 </html>

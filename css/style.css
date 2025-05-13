@@ -1,6 +1,7 @@
-@import url("https://fonts.googleapis.com/css?family=Arimo:400|Raleway:300,400,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Arimo:400");
 body {
-  font-family: "Raleway", sans-serif;
+  font-family: "Roboto", sans-serif;
   color: #fff;
   font-size: 16px;
   line-height: 30px;
@@ -74,7 +75,7 @@ a:hover {
 .unslate_co--footer {
   position: fixed !important;
   width: 100%;
-  background-color: #191919;
+  background-color: #121212;
   color: #fff;
   left: 0;
   right: 0;
@@ -811,8 +812,8 @@ a:hover {
   top: 0;
   margin-top: -130px;
   background: #fff !important;
-  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding-top: 5px;
   padding-bottom: 5px;
 }
@@ -2223,11 +2224,12 @@ figure.dotted-bg:before {
   display: inline-block;
   padding-left: 20px;
   padding-right: 20px;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.7);
   letter-spacing: 0.1rem;
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 .unslate_co--footer .footer-site-social li a:hover,
