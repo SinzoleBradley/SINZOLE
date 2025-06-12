@@ -8,7 +8,8 @@ AOS.init({
 jQuery(function($) {
 	
 	'use strict';
-	loader();
+	customLoader(); // Call the new custom loader
+	// loader(); // Comment out or remove the old loader
 	siteMenuClone();
 	mobileToggleClick();
 	onePageNavigation();
@@ -24,6 +25,33 @@ jQuery(function($) {
 	animateReveal();
 
 });
+
+// Custom Loader Function
+var customLoader = function() {
+	const loaderElement = document.getElementById('custom-loader');
+	if (loaderElement) {
+		const hideLoader = () => {
+			if (!loaderElement.classList.contains('hidden')) {
+				loaderElement.classList.add('hidden');
+				// After the opacity transition, set display to none
+				setTimeout(() => {
+					loaderElement.style.display = 'none';
+				}, 500); // This duration should match the CSS transition duration for opacity
+			}
+		};
+
+		// Hide the loader after a delay
+		// Increased initial timeout slightly to ensure content has a chance to start loading
+		const initialHideTimeout = setTimeout(hideLoader, 2500);
+
+		// Also hide when window.load event fires, ensuring it doesn't stay too long
+		window.addEventListener('load', function() {
+			clearTimeout(initialHideTimeout); // Clear the initial timeout if load fires first
+			setTimeout(hideLoader, 200); // Hide with a small delay after load
+		});
+	}
+};
+// End Custom Loader Function
 
 var siteIstotope = function() {
 	var $container = $('#posts').isotope({
@@ -111,13 +139,13 @@ var siteIstotope = function() {
 
 }
 
-var loader = function() {
-	setTimeout(function() {
-		TweenMax.to('.site-loader-wrap', 1, { marginTop: 50, autoAlpha: 0, ease: Power4.easeInOut });
-  }, 10);
-  $(".site-loader-wrap").delay(200).fadeOut("slow");
-	$("#unslate_co--overlayer").delay(200).fadeOut("slow");	
-}
+// var loader = function() {
+// 	setTimeout(function() {
+// 		TweenMax.to('.site-loader-wrap', 1, { marginTop: 50, autoAlpha: 0, ease: Power4.easeInOut });
+//   }, 10);
+//   $(".site-loader-wrap").delay(200).fadeOut("slow");
+// 	$("#unslate_co--overlayer").delay(200).fadeOut("slow");	
+// }
 
 var siteMenuClone = function() {
 

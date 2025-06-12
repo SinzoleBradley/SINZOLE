@@ -2602,3 +2602,71 @@ span.error {
 .gsap-reveal-img .reveal-wrap .reveal-content .portfolio-item-content h3 {
   margin-bottom: 10px;
 }
+
+/* Custom Loader Styles */
+#custom-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1c1c1e; /* Dark background from site */
+  display: flex;
+  flex-direction: column; /* Stack initials and spinner vertically */
+  align-items: center;
+  justify-content: center;
+  z-index: 9999; /* Ensure it's on top */
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+#custom-loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader-initials {
+  font-family: 'Arimo', sans-serif; /* Using a font from the site */
+  font-size: 6rem; /* Large initials */
+  color: #f5f5f7; /* Soft white text color from site */
+  font-weight: bold;
+  animation: pulseInitials 2s infinite ease-in-out;
+  margin-bottom: 30px; /* Space between initials and spinner */
+}
+
+.loader-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(245, 245, 247, 0.2); /* Lighter track for spinner using text color with alpha */
+  border-top-color: #C0392B; /* Accent color for the active part of spinner */
+  border-radius: 50%;
+  animation: spinLoader 1.2s linear infinite, fadeSpinner 2.4s infinite alternate ease-in-out;
+}
+
+@keyframes pulseInitials {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+@keyframes spinLoader {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeSpinner {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+/* End Custom Loader Styles */
