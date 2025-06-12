@@ -2247,19 +2247,21 @@ figure.dotted-bg:before {
 
 .unslate_co--footer .footer-site-social li a {
   display: inline-block;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 10px 15px; /* Adjusted padding for better spacing */
   color: rgba(255, 255, 255, 0.7);
-  letter-spacing: 0.1rem;
-  text-transform: uppercase;
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 20px; /* Increased icon size */
   transition: color 0.3s ease;
+  line-height: 1; /* Ensure icons align well */
 }
 
 .unslate_co--footer .footer-site-social li a:hover,
 .unslate_co--footer .footer-site-social li a:focus {
   color: #fff;
+}
+
+.unslate_co--footer .site-copyright {
+  font-size: 14px; /* Adjusted font size for copyright */
+  margin-top: 20px; /* Added margin above copyright */
 }
 
 .loader-portfolio-wrap {
