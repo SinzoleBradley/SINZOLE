@@ -8,8 +8,8 @@ AOS.init({
 jQuery(function($) {
 	
 	'use strict';
-	customLoader(); // Call the new custom loader
-	// loader(); // Comment out or remove the old loader
+	customLoader(); // Call the new custom loader for index.html
+	loader();       // Call the original loader for blog pages
 	siteMenuClone();
 	mobileToggleClick();
 	onePageNavigation();
@@ -23,10 +23,11 @@ jQuery(function($) {
 	contactForm();
 	stickyFillPlugin();
 	animateReveal();
+	calculateReadingTime(); // Call the new reading time function
 
 });
 
-// Custom Loader Function
+// Custom Loader Function (for index.html)
 var customLoader = function() {
 	const loaderElement = document.getElementById('custom-loader');
 	if (loaderElement) {
@@ -41,7 +42,6 @@ var customLoader = function() {
 		};
 
 		// Hide the loader after a delay
-		// Increased initial timeout slightly to ensure content has a chance to start loading
 		const initialHideTimeout = setTimeout(hideLoader, 2500);
 
 		// Also hide when window.load event fires, ensuring it doesn't stay too long
@@ -139,13 +139,14 @@ var siteIstotope = function() {
 
 }
 
-// var loader = function() {
-// 	setTimeout(function() {
-// 		TweenMax.to('.site-loader-wrap', 1, { marginTop: 50, autoAlpha: 0, ease: Power4.easeInOut });
-//   }, 10);
-//   $(".site-loader-wrap").delay(200).fadeOut("slow");
-// 	$("#unslate_co--overlayer").delay(200).fadeOut("slow");	
-// }
+// Original loader function (for blog-single*.html pages)
+var loader = function() {
+	setTimeout(function() {
+		TweenMax.to('.site-loader-wrap', 1, { marginTop: 50, autoAlpha: 0, ease: Power4.easeInOut });
+  }, 10);
+  $(".site-loader-wrap").delay(200).fadeOut("slow");
+	$("#unslate_co--overlayer").delay(200).fadeOut("slow");	
+}
 
 var siteMenuClone = function() {
 
@@ -699,4 +700,17 @@ var animateReveal = function() {
 		});
 	}
 
-}
+};
+
+var calculateReadingTime = function() {
+	var wordsPerMinute = 225; // Average reading speed
+	var contentArea = $('#blog-single-section .col-md-7');
+	var readingTimeSpan = $('.post-meta .reading-time');
+
+	if (contentArea.length && readingTimeSpan.length) {
+		var text = contentArea.text();
+		var words = text.trim().split(/\s+/).length;
+		var minutes = Math.ceil(words / wordsPerMinute);
+		readingTimeSpan.text(minutes + (minutes === 1 ? ' min read' : ' mins read'));
+	}
+};
