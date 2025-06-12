@@ -1353,6 +1353,12 @@ a:hover {
 
 .portfolio-item {
   overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1), /* Base shadow for depth */
+              0 0 8px rgba(255, 255, 255, 0.3), /* White glow */
+              0 0 12px rgba(192, 57, 43, 0.2);  /* Accent glow */
+  -webkit-transition: box-shadow 0.3s ease-in-out;
+  -o-transition: box-shadow 0.3s ease-in-out;
+  transition: box-shadow 0.3s ease-in-out; /* Add transition for glow */
 }
 
 .portfolio-item img {
@@ -1369,6 +1375,13 @@ a:hover {
   -webkit-transform: scale(1.09);
   -ms-transform: scale(1.09);
   transform: scale(1.09);
+}
+
+.portfolio-item:hover {
+  /* The image inside scales, we enhance its glow too */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1), /* Keep base shadow consistent */
+              0 0 12px rgba(255, 255, 255, 0.45), /* Enhanced white glow */
+              0 0 18px rgba(192, 57, 43, 0.3);   /* Enhanced accent glow */
 }
 
 .portfolio-item,
@@ -1733,8 +1746,8 @@ figure.dotted-bg:before {
   padding: 30px; /* Add padding inside the card */
   background-color: rgba(255, 255, 255, 0.03); /* Subtle background for the card */
   border-radius: 8px; /* Rounded corners for the card */
-  -webkit-box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Subtle shadow */
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Subtle shadow */
+  -webkit-box-shadow: 0 5px 15px rgba(0,0,0,0.1), 0 0 8px rgba(255, 255, 255, 0.3), 0 0 12px rgba(192, 57, 43, 0.2); /* Subtle shadow + Glow */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1), 0 0 8px rgba(255, 255, 255, 0.3), 0 0 12px rgba(192, 57, 43, 0.2); /* Subtle shadow + Glow */
   -webkit-transition: -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
   transition: -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
   -o-transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -1746,8 +1759,8 @@ figure.dotted-bg:before {
   -webkit-transform: translateY(-5px);
   -ms-transform: translateY(-5px);
   transform: translateY(-5px); /* Slight lift on hover */
-  -webkit-box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15); /* Enhanced shadow on hover */
+  -webkit-box-shadow: 0 10px 25px rgba(0,0,0,0.15), 0 0 12px rgba(255, 255, 255, 0.45), 0 0 18px rgba(192, 57, 43, 0.3); /* Enhanced shadow + Glow */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15), 0 0 12px rgba(255, 255, 255, 0.45), 0 0 18px rgba(192, 57, 43, 0.3); /* Enhanced shadow + Glow */
 }
 
 @media (max-width: 767.98px) {
