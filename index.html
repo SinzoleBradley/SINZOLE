@@ -16,12 +16,12 @@
     <link rel="stylesheet" href="css/vendor/aos.css">
     <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="css/vendor/jquery.fancybox.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" integrity="sha384-1u+o5ffIOOcE5qltK+9ix5yAdt6Ly05WTwi+czm9+eh5c+efk99jW5z5stt5W5z5" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <link rel="icon" href="images/favicon.ico.png">
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
   (function() {
-    emailjs.init('TjLeanNoO9_yfWoUu');
+    emailjs.init({ publicKey: 'TjLeanNoO9_yfWoUu' });
   })();
 </script>
     
@@ -332,7 +332,7 @@
         <div class="item web branding col-sm-6 col-md-6 col-lg-4 isotope-mb-2">
           <a href="portfolio-single-2.html" class="portfolio-item ajax-load-page item-portrait isotope-item gsap-reveal-img" data-id="2">
               <div class="overlay">
-                <span class="wrap-icon icon-link2"></span>
+                <span class="wrap-icon"><i class="fa fa-eye"></i></span>
                 <div class="portfolio-item-content">
                   <h3>WEB DEVELOPMENT</h3>
                   <p>Development</p>
@@ -570,7 +570,7 @@
 
     <script src="js/scripts-dist.js"></script>
     <script src="js/main.js"></script>
-    <script>
+    <script type="text/javascript">
     document.getElementById('contact-form').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -608,7 +608,7 @@ function sendAutoReply(email, name) {
         });
 }
     </script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" integrity="sha384-1u+o5ffIOOcE5qltK+9ix5yAdt6Ly05WTwi+czm9+eh5c+efk99jW5z5stt5W5z5" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init();
     </script>

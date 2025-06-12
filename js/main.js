@@ -76,11 +76,13 @@ var siteIstotope = function() {
 				setTimeout(function() {
 
 					tl2
-						tl2.set(img, {  scale: '2.0', autoAlpha: 1, })
-						.to(cover, 1, { marginLeft: '0', ease:Expo.easeInOut, onComplete() {
-							tl2.set(revealContent, { autoAlpha: 1 });
-							tl2.to(cover, 1, { marginLeft: '102%', ease:Expo.easeInOut });
-							tl2.to(img, 2, { scale: '1.0', ease:Expo.easeOut }, '-=1.5');
+						.set(img, { scale: '2.0', opacity: 0, visibility: 'hidden' }) // Start image scaled and hidden
+						.to(cover, 1, { marginLeft: '0%', ease:Expo.easeInOut, onComplete: function() {
+							// Explicitly make revealContent and img visible
+							TweenMax.set(revealContent, { autoAlpha: 1, zIndex: 10 }); // Ensure content is above cover (z-index > 9)
+							TweenMax.set(img, { autoAlpha: 1 });
+							tl2.to(cover, 1, { marginLeft: '102%', ease:Expo.easeInOut, delay: 0.1 }); // Move cover away
+							tl2.to(img, 2, { scale: '1.0', ease:Expo.easeOut }, '-=1.5'); // Scale image to normal
 						} } )
 
 				}, i * 700);
@@ -601,14 +603,21 @@ var animateReveal = function() {
 	if ( greveal.length ) {
 		var revealNum = 0;
 		greveal.each(function() {
-			var cover = $(this).find('.cover');
+			var $this = $(this);
+			var cover = $this.find('.cover');
+			// Directly target children of .gsap-reveal, assuming they are the content to be revealed.
+			var contentToReveal = $this.children().not('.cover'); 
 
 			var tl = new TimelineMax();
 
+			// Start content hidden, then reveal after cover moves
+			tl.set(contentToReveal, { autoAlpha: 0 });
+
 			setTimeout(function() {
 				tl
-					.fromTo(cover, 2, { skewX: 0 }, { xPercent: 101, transformOrigin: "0% 100%", ease:Expo.easeInOut })
-			}, revealNum * 0);
+					.to(cover, 1.5, { xPercent: 101, ease:Expo.easeInOut })
+					.set(contentToReveal, { autoAlpha: 1 }, "-=0.5"); // Reveal content slightly before cover fully exits
+			}, revealNum * 100); // Stagger slightly for multiple elements
 			
 			var scene = new ScrollMagic.Scene({
 				triggerElement: this,
@@ -663,4 +672,3 @@ var animateReveal = function() {
 	}
 
 }
-
